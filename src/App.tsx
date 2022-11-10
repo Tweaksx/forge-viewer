@@ -3,12 +3,6 @@ import { ForgeViewer } from "@lagarsoft/forge-viewer-react";
 import "./App.css";
 
 const getToken = () => {
-  const formData = new FormData();
-  formData.append("client_id", "QuNj30eGTLgZsAZAYDPXIAKV0PmtyFYO");
-  formData.append("client_secret", "9aGpVUhoLYlyviFo");
-  formData.append("grant_type", "client_credentials");
-  formData.append("scope", "code:all data:read");
-
   return fetch(
     "https://developer.api.autodesk.com/authentication/v1/authenticate",
     {
