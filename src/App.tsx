@@ -7,8 +7,8 @@ const getToken = () => {
     "https://developer.api.autodesk.com/authentication/v1/authenticate",
     {
       body: new URLSearchParams({
-        client_id: "QuNj30eGTLgZsAZAYDPXIAKV0PmtyFYO",
-        client_secret: "9aGpVUhoLYlyviFo",
+        client_id: "7L7sGElkiLtAudgDcqo5OfxonfyPudAz",
+        client_secret: "ZJwAVtGdZnKcGG1O",
         grant_type: "client_credentials",
         scope: "code:all data:read",
       }),
@@ -23,10 +23,11 @@ const getToken = () => {
 function App() {
   const [token, setToken] = useState();
   const urn =
-    "urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6cXVuajMwZWd0bGd6c2F6YXlkcHhpYWt2MHBtdHlmeW9fam9yZ2VfYnVpbGRlcl9wcm9qZWN0L0lDUi1WREMtVDEtRjIzLXY4LnJ2dA==";
+    "urn:dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YTM2MHZpZXdlci90MTY3MDE3ODA1MTI0M19jYmJkY2ZiYy01ZjQ4LTRmMTYtOWE5MC01ODk1NDY4Mjc1NTJfMTY3MDE3ODA1MTI0My5ydnQ";
   useEffect(() => {
     getToken().then((response) => {
       setToken(response.access_token);
+      console.log('response.access_token: ', response.access_token);
     });
   }, []);
   return (
